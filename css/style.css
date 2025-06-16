@@ -1,86 +1,95 @@
+/* Primeiro, vamos buscar uma fonte legal no Google Fonts pra deixar o site com uma cara mais profissional. */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+/* Aqui a gente define nossas 'variáveis'. Fica mais fácil de manter e mudar as cores do site todo depois. */
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    --background-color: #ecf0f1;
-    --surface-color: #ffffff;
-    --text-color: #34495e;
-    --header-footer-bg: #2c3e50;
-    --font-family: 'Poppins', sans-serif;
+    --primary-color: #3498db;      /* Escolhi esse azul porque é moderno e passa confiança. Vai ser nossa cor de destaque. */
+    --secondary-color: #2ecc71;    /* Um verde vibrante para as tags de categoria, pra chamar a atenção. */
+    --background-color: #ecf0f1;   /* Um cinza bem clarinho no fundo, pra não cansar a vista e dar um ar clean. */
+    --surface-color: #ffffff;      /* Branco puro para os cards e outras superfícies, pra criar um contraste bom com o fundo. */
+    --text-color: #34495e;         /* Um cinza mais escuro pro texto, porque preto total ( #000 ) às vezes é muito pesado. */
+    --header-footer-bg: #2c3e50;   /* Um tom de azul quase preto pro cabeçalho e rodapé, pra criar uma 'moldura' pro site. */
+    --font-family: 'Poppins', sans-serif; /* Definindo a Poppins como nossa fonte principal. Ela é moderna e bem legível. */
 }
 
+/* Aquele reset clássico pra garantir que todos os navegadores comecem do mesmo ponto, sem margens ou paddings estranhos. */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;                      /* Zera a margem de tudo. */
+    padding: 0;                     /* Zera o preenchimento de tudo. */
+    box-sizing: border-box;         /* Isso faz o tamanho dos elementos ser mais previsível. O padding não vai 'somar' na largura. */
 }
 
+/* Coisinha pequena, mas deixa a rolagem da página mais suave quando se clica em links internos. */
 html {
     scroll-behavior: smooth;
 }
 
+/* Estilos básicos que vão valer pro site todo. */
 body {
-    font-family: var(--font-family);
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.7;
+    font-family: var(--font-family);          /* Aplicando a fonte que escolhemos. */
+    background-color: var(--background-color);  /* Usando nossa variável de cor de fundo. */
+    color: var(--text-color);               /* E a nossa cor de texto padrão. */
+    line-height: 1.7;                         /* Um espaço maior entre as linhas melhora muito a leitura de textos longos. */
 }
 
+/* O container principal do conteúdo de cada página. */
 main {
-    padding: 2rem;
-    min-height: 80vh;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 2rem;                            /* Um 'respiro' nas laterais e no topo/fundo. */
+    min-height: 80vh;                         /* Garante que a página tenha uma altura mínima, mesmo com pouco conteúdo. */
+    max-width: 1200px;                        /* Limitando a largura pra que o texto não fique gigante em telas grandes. */
+    margin: 0 auto;                           /* E esse 'truque' centraliza nosso container principal na tela. */
 }
 
+/* Uma regra geral para os títulos, pra manter a consistência. */
 h1, h2, h3 {
     color: var(--header-footer-bg);
 }
 
+/* Nosso cabeçalho, a parte de cima do site. */
 header {
     background-color: var(--header-footer-bg);
     color: white;
     padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;                            /* Alinhando o logo e a navegação um do lado do outro. */
+    justify-content: space-between;           /* Empurra o logo pra um lado e a navegação pro outro. */
+    align-items: center;                      /* Alinha tudo bonitinho na vertical. */
+    position: sticky;                         /* Deixando o cabeçalho 'colado' no topo quando o usuário rola a página. */
+    top: 0;                                   /* Define que ele vai 'colar' no topo. */
+    z-index: 1000;                            /* Garante que o cabeçalho fique por cima de todo o resto. */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);    /* Uma sombrinha sutil pra dar um efeito de elevação. */
 }
 
 header .logo {
     font-size: 1.5rem;
-    font-weight: 700;
-    text-decoration: none;
+    font-weight: 700;                         /* Deixando o logo mais 'forte'. */
+    text-decoration: none;                    /* Tirando o sublinhado, caso o logo seja um link. */
     color: white;
 }
 
 header nav ul {
-    list-style: none;
+    list-style: none;                         /* Tira as bolinhas da lista. */
     display: flex;
 }
 
 header nav ul li {
-    margin-left: 2rem;
+    margin-left: 2rem;                        /* Um espaço legal entre os itens do menu. */
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s;
+    transition: color 0.3s;                   /* Uma transição suave quando a cor mudar. */
 }
 
 header nav ul li a:hover {
-    color: var(--primary-color);
+    color: var(--primary-color);              /* Efeito visual simples pra quando o mouse passa por cima. */
 }
 
+/* Estilizando a área dos botões de filtro. */
 .filter-container {
     margin-bottom: 2rem;
-    text-align: center;
+    text-align: center;                       /* Pra centralizar os botões. */
 }
 
 .filter-btn {
@@ -89,8 +98,8 @@ header nav ul li a:hover {
     border: none;
     padding: 0.5rem 1rem;
     margin: 0.25rem;
-    border-radius: 20px;
-    cursor: pointer;
+    border-radius: 20px;                      /* Deixando os botões com formato de pílula. */
+    cursor: pointer;                          /* Muda o cursor pra mãozinha, mostrando que é clicável. */
     transition: all 0.3s;
     font-weight: 600;
 }
@@ -99,12 +108,14 @@ header nav ul li a:hover {
     background-color: #95a5a6;
 }
 
+/* Esse é o estilo pro botão que está ativo, o que foi clicado. */
 .filter-btn.active {
     background-color: var(--primary-color);
     color: white;
-    transform: scale(1.05);
+    transform: scale(1.05);                   /* Um efeitinho pra ele 'saltar' um pouco. */
 }
 
+/* Estilizando o campo de busca. */
 #search {
     width: 100%;
     padding: 0.8rem;
@@ -116,45 +127,48 @@ header nav ul li a:hover {
 }
 
 #search:focus {
-    outline: none;
-    border-color: var(--primary-color);
+    outline: none;                            /* Tira aquela borda feia que o navegador coloca quando clicamos. */
+    border-color: var(--primary-color);       /* Destaca a borda com a nossa cor principal. */
     box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
 }
 
+/* A grade que vai segurar todos os nossos cards de tutoriais. */
 #cards {
     display: grid;
+    /* A mágica da responsividade! Cria colunas que se ajustam sozinhas. */
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
+    gap: 2rem;                                /* Um respiro entre os cards, pra não ficar tudo amontoado. */
 }
 
+/* O estilo de cada card individualmente. */
 .card {
     background-color: var(--surface-color);
     border-radius: 10px;
     text-decoration: none;
     color: var(--text-color);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;                         /* Importante pra imagem não 'vazar' pra fora das bordas arredondadas. */
+    display: flex;                            /* Usando flexbox pra alinhar o conteúdo interno. */
+    flex-direction: column;                   /* Organizando o conteúdo (imagem, texto) um embaixo do outro. */
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px);              /* Faz o card 'flutuar' um pouquinho pra cima. */
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
 .card-image {
     width: 100%;
     height: 180px;
-    object-fit: cover;
+    object-fit: cover;                        /* Garante que a imagem preencha o espaço sem ficar distorcida. */
 }
 
 .card-content {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex-grow: 1;                             /* Faz esse bloco crescer e ocupar o espaço disponível no card. */
 }
 
 .card h3 {
@@ -165,7 +179,7 @@ header nav ul li a:hover {
 .card p {
     color: #7f8c8d;
     margin-bottom: 1rem;
-    flex-grow: 1;
+    flex-grow: 1;                             /* Truque pra fazer a categoria ficar sempre alinhada na base do card. */
 }
 
 .card .category {
@@ -175,18 +189,20 @@ header nav ul li a:hover {
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: 600;
-    align-self: flex-start;
+    align-self: flex-start;                   /* Garante que a tag não estique pra preencher a largura toda. */
 }
 
+/* Mensagem pra quando a busca não encontra nada. */
 .not-found {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1;                      /* Faz a mensagem ocupar todas as colunas da grade. */
     text-align: center;
     font-size: 1.2rem;
     color: var(--secondary-color);
 }
 
+/* O botão de menu 'hambúrguer' para celulares. */
 #menu-toggle {
-    display: none;
+    display: none;                            /* Ele fica escondido em telas grandes. */
     background: none;
     border: none;
     color: white;
@@ -194,21 +210,24 @@ header nav ul li a:hover {
     cursor: pointer;
 }
 
+/* Aqui começa a adaptação pra telas menores, tipo celular (até 768px de largura). */
 @media (max-width: 768px) {
     #menu-toggle {
-        display: block;
+        display: block;                       /* Agora o botão de menu aparece. */
     }
 
+    /* A navegação normal de PC é escondida. */
     header nav ul {
         display: none;
         flex-direction: column;
         width: 100%;
-        position: absolute;
-        top: 73px;
+        position: absolute;                   /* Fica 'flutuando' sobre o conteúdo. */
+        top: 73px;                            /* Distância do topo (logo abaixo do header). */
         left: 0;
         background-color: var(--header-footer-bg);
     }
 
+    /* Quando o menu tem a classe 'active' (que o JS coloca), ele finalmente aparece. */
     header nav ul.active {
         display: flex;
     }
@@ -216,15 +235,16 @@ header nav ul li a:hover {
     header nav ul li {
         margin: 0;
         text-align: center;
-        border-top: 1px solid #4a627a;
+        border-top: 1px solid #4a627a;        /* Uma linha pra separar os itens. */
     }
 
     header nav ul li a {
         padding: 1rem;
-        display: block;
+        display: block;                       /* Faz o link ocupar a linha inteira, facilitando o clique. */
     }
 }
 
+/* Estilos básicos pro nosso rodapé, pra fechar o site de forma consistente. */
 footer {
     text-align: center;
     padding: 2rem;
