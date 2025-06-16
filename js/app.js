@@ -1,7 +1,7 @@
-// Aguarda o conteúdo da página carregar completamente
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- DADOS DOS TUTORIAIS (com URLs de imagem corrigidas) ---
+   
     const tutorials = [{
         title: "Guia Completo de Flexbox",
         category: "CSS",
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let activeCategory = 'todos';
 
-    // --- RENDERIZAÇÃO DOS CARDS ---
+   
     function renderCards(list) {
         cardsContainer.innerHTML = '';
         if (list.length === 0) {
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- CRIAÇÃO DOS BOTÕES DE FILTRO DINAMICAMENTE ---
+    
     function createFilterButtons() {
         const categories = ['Todos', ...new Set(tutorials.map(t => t.category))];
         categories.forEach(category => {
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // --- FUNÇÃO CENTRAL DE FILTRAGEM ---
+
     function applyFilters() {
         const searchTerm = searchInput.value.toLowerCase();
         let filteredTutorials = tutorials;
@@ -109,14 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCards(filteredTutorials);
     }
     
-    // --- INICIALIZAÇÃO DA PÁGINA DE TUTORIAIS ---
+
     if (cardsContainer && filterContainer && searchInput) {
         createFilterButtons();
         applyFilters();
         searchInput.addEventListener('input', applyFilters);
     }
     
-    // --- CONTROLE DO MENU MOBILE ---
+    
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
 
