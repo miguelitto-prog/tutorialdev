@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Completo de Flexbox - Site de Tutoriais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">TutoriaisDev</a>
+        <button id="menu-toggle">☰</button>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../categorias.html">Tutoriais</a></li>
+                <li><a href="../sobre.html">Sobre</a></li>
+                <li><a href="../contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="tutorial-content">
+        <h1>Guia Completo de Flexbox</h1>
+        <div class="tutorial-meta">
+            <span><strong>Categoria:</strong> CSS</span>
+            <span><strong>Publicado em:</strong> 16/06/2025</span>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1504639725576-316b1f2c5126?q=80&w=1770&auto=format&fit=crop" alt="Pessoa organizando blocos coloridos, representando flexbox" class="tutorial-hero-image">
+        
+        <p class="summary">
+            Neste tutorial, vamos explorar o CSS Flexbox, um modelo de layout poderoso que permite criar designs complexos e responsivos com muito menos código e de forma mais intuitiva.
+        </p>
+        
+        <hr>
+
+        <section>
+            <h2>O que é Flexbox?</h2>
+            <p>
+                O Flexible Box Layout, ou simplesmente Flexbox, é um modelo de layout unidimensional que oferece uma maneira eficiente de alinhar e distribuir espaço entre itens em um container, mesmo quando o tamanho desses itens é desconhecido ou dinâmico.
+            </p>
+        </section>
+
+        <section>
+            <h2>Propriedades do Container Flex</h2>
+            <p>
+                Para começar, você precisa aplicar `display: flex;` ao container pai. Algumas propriedades importantes do container são:
+            </p>
+            <ul>
+                <li><strong>flex-direction:</strong> define a direção do eixo principal (row, column, etc.).</li>
+                <li><strong>justify-content:</strong> alinha os itens ao longo do eixo principal.</li>
+                <li><strong>align-items:</strong> alinha os itens ao longo do eixo transversal.</li>
+            </ul>
+            <pre><code>.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}</code></pre>
+        </section>
+
+        <a href="javascript:history.back()" class="back-link">← Voltar para a lista</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TutoriaisDev. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="../js/app.js"></script>
+</body>
+</html>
